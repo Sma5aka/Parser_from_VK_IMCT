@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -16,9 +17,17 @@ namespace parser
         }
         private async Task parse()
         {
-            string from = "https://api.vk.com/method/users.get";
-            string response = await client.GetStringAsync("https://api.vk.com/method/users.get?user_id=a.borisov1994&v=5.131");
-            Console.WriteLine(response);
+            string token = "vk1.a.RWs5G9Uzr_jwTVzO9IEB8E0PCNlg50T6xYjrDV_v72AX3MOyDbILlhi2a8D_VJ1H1faaVffvrgoegIiWHSxZeu3ZQeEl0FY-arfMTzSmp40-VS1OH1QxrWz6K-uMcyc9ScDyK8PT91UD8UCGyN1mRT4BzruoWlRGyLK4LMh0Tr1uZosRoHMemofnqCxLKW6z";
+            //string owner_id = "-206944280";
+            string domain = "imct_fefu";
+            int count = 2;
+            // + "&count=" + count.ToString()
+            string from = "https://api.vk.com/method/";
+            string response = await client.GetStringAsync(from + "wall.get?domain=" + domain + "&count=" + count.ToString() + "&access_token=" + token + "&v=5.131");
+            //Console.WriteLine(response);
+            Parser _response = JsonConvert.DeserializeObject<Parser>(response);
+            Console.WriteLine(_response.response.items[0].text);
+            
         }
     }
 }
