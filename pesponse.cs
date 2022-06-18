@@ -42,7 +42,7 @@ namespace parser
     }
     public class Attachments
     {
-
+        //Here can be added image's url parse
     }
     public class Comments
     {
