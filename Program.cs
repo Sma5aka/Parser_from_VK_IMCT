@@ -55,7 +55,7 @@ namespace parser
         }
         private async Task<Parser> parse()
         {
-            string token = "vk1.a.RWs5G9Uzr_jwTVzO9IEB8E0PCNlg50T6xYjrDV_v72AX3MOyDbILlhi2a8D_VJ1H1faaVffvrgoegIiWHSxZeu3ZQeEl0FY-arfMTzSmp40-VS1OH1QxrWz6K-uMcyc9ScDyK8PT91UD8UCGyN1mRT4BzruoWlRGyLK4LMh0Tr1uZosRoHMemofnqCxLKW6z";
+            string token = "some_token";
             
             string domain = "imct_fefu";
             int count = 100;
